@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-	<h1 class="page-header text-center">Simple Age Calculator</h1>
+	<h1 class="page-header text-center">Tutorial03</h1>
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4">
 			<form method="POST">
