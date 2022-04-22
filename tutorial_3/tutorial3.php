@@ -1,38 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutorial03</title>
+	<meta charset="utf-8">
+	<title>Tutorial03</title>
+	
 </head>
 <body>
-<?php
-if(isset($_POST['age'])){
-    $dob = $_POST['age'];
-calculate_age($dob);
-$year = calculate_Year($dob);
-}
-
-function calculate_age($birthday)
-{
-    $today = new DateTime();
-    $diff = $today->diff(new DateTime($birthday));
-    return printf('%d years, %d month, %d days', $diff->y, $diff->m, $diff->d);
-}
-function calculate_Year($birthday)
-{
-    $today = new DateTime();
-    $diff = $today->diff(new DateTime($birthday));
-    return  $diff->y;
-}
- ?>
-
-<form  method="post" action="age.php" >
-ENTER DATE OF BIRTH : <input type="date" name="age" />
-<input type="submit" value="Calculate Age" />
-</form>
-
+<div class="container">
+	<h1 class="page-header text-center">Simple Age Calculator</h1>
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-4">
+			<form method="POST">
+				<div class="form-group">
+					<label>Birthday:</label>
+					<input type="date" name="birthday" class="form-control" required>
+				</div>
+				<button type="submit" name="calculate" class="btn btn-primary">Calculate</button>
+			</form>
+      <?php
+				if(isset($_POST['calculate'])){
+					$bday = $_POST['birthday'];
+					$today = date('Y-m-d');
+					$diff = date_diff(date_create($bday), date_create($today));
+					?>
+					<div class="alert alert-info text-center" style="margin-top:20px;">
+						<?php echo 'Age is <b>'.$diff->format('%y').'</b>'; ?>
+					</div>
+					<?php
+				}
+ 
+			?>
+		</div>
+	</div>
+</div>
 </body>
 </html>
-
