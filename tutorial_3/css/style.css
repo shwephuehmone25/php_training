@@ -1,0 +1,14 @@
+.container{
+  width: 100%;
+}
+.header{
+  text-align: center;
+}
+.btn-cal{
+  margin: auto;
+  text-align: center;
+}
+.alert-box{
+  margin-top:20px;
+  text-align: center;
+}
