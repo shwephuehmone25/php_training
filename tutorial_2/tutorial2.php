@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="container">
-   
-    <?php 
+   <?php 
         $n = 6;
         for ($row = 1; $row <= $n; $row++) {
             for ($i = 1; $i <= (2 * $n) - 1; $i++) {
@@ -22,8 +20,7 @@
             }
             echo "<br/>";
         }
-
-        for ($row = ($n - 1); $row >= 1; $row--) {
+    for ($row = ($n - 1); $row >= 1; $row--) {
             for ($i = 1; $i <= (2 * $n) - 1; $i++) {
                 if ($i >= $n - ($row - 1) && $i <= $n + ($row - 1)) {
                     echo "* ";
