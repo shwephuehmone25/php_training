@@ -1,0 +1,38 @@
+h3{
+color: Tomato;
+}
+.button {
+display: inline-block;
+margin: 4px 2px;
+padding: 16px 32px;
+border: none;
+background-color: #4CAF50; /* Green */
+color: white;
+font-size: 16px;
+text-decoration: none;
+text-align: center;
+cursor: pointer;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+}
+.button2 { 
+border: 2px solid #008CBA;
+background-color: white; 
+color: black;
+}
+.button2:hover {
+background-color: #008CBA;
+color: white;
+}
+p{
+color: Tomato;
+}
+h4 {
+color: MediumSeaGreen;
+}
+h2.heading{
+color: Violet;
+}
+p.link{
+color: DodgerBlue;
+}
