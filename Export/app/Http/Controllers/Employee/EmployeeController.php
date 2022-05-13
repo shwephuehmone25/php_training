@@ -29,9 +29,8 @@ class EmployeeController extends Controller
     public function index()
     {
         $employee = $this->employeeInterface->selectEmployee();
-        $employees = Employee::all();
-        // Pass data to view
-        return view('employee.index', ['employees' => $employees]);
+        $employee = Employee::all();
+        return view('index')->with('employee', $employee);
     }
 
     public function create()

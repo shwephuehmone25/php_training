@@ -18,25 +18,16 @@ Route::get('/', [EmployeeController::class, 'index']);
 
 Route::get('/create', [EmployeeController::class, 'create']);
 
-Route::get('/show/{employee}', [EmployeeController::class, 'show']);
-Route::get('/edit/{employee}', [EmployeeController::class, 'edit']);
-Route::post('/update/{employee}', [EmployeeController::class, 'update']);
+Route::get('/show/{employe}', [EmployeeController::class, 'show']);
+Route::get('/edit/{employe}', [EmployeeController::class, 'edit']);
+Route::post('/update/{employe}', [EmployeeController::class, 'update']);
 
 
 Route::get('/delete/{employee}', [EmployeeController::class, 'delete']);
 
 Route::post('/store-data', [EmployeeController::class, 'store']);
 
-/*Routes for mail system*/
-Route::get('send-mail', function () {
-   
-    $employee= [
-        'name' => 'Employee List',
-        'address' => 'Yangon',
-        'salary' => '300000'
-    ];
-   
-    \Mail::to('your_receiver_email@gmail.com')->send(new \App\Mail\MyTestMail($employee));
-   
-    dd("Email is Sent.");
-});
+/*Routes for export/import */
+Route::get('export', 'DemoController@export')->name('export');
+Route::get('importExportView', 'DemoController@importExportView');
+Route::post('import', 'DemoController@import')->name('import');
