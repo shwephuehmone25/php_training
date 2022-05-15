@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
  
 class Employee extends Model
 { 
+  //table name
 	protected $table = 'employee';
+  //primary key
 	protected $primaryKey = 'id';
     /**
      * The attributes that should be hidden for arrays.

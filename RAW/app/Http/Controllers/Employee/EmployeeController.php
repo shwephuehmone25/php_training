@@ -47,8 +47,11 @@ class EmployeeController extends Controller
 
     public function edit($id)
     {
-        $employee = DB::update('update employee set name = ShwePhue where name = ?', ['shwephuehmone']);
-        return view('edit')->with('employee', $employee);
+        DB::table('employee')
+                ->where('id', 1)
+                ->update(['name' => 'Shwe Phue Hmone']);
+        return view('index');
+        
     }
 
     public function update(Request $request)
